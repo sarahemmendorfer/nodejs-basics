@@ -1,0 +1,39 @@
+<%- include('../partials/head'); %>
+<%- include('../partials/header'); %>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="row mt-5 mb-5">
+                <div class="col-10 text-uppercase mb-2">
+                    <h1>Editar cadastro de Disciplinas</h1>
+                </div>
+                <div class="col-2">
+                    <a href="/cadastrarAlunos" class="btn btn-danger">Inserir</a>
+                </div>
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th>Disciplina</th>
+                            <th>Carga Horária</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% disciplinas.forEach(function(disciplina){ %>
+                        <tr>
+                            <td><%= disciplina.cadNomeDisciplina %></td>
+                            <td><%= disciplina.cadCargaHoraria %></td>
+                            <td>
+                                <a href="/editarDisciplinas/<%= disciplina._id %>" class="btn btn-info" class="btn btn-info">Editar</a>
+                                <a href="/deletarDisciplina/<%= disciplina._id %>" class="btn btn-primary">Deletar</a>
+                            </td>
+
+                            <% }) %>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer'); %>

@@ -1,0 +1,69 @@
+<%- include('../partials/head'); %>
+<%- include('../partials/header'); %>
+
+<div class="container bg-light mt-3 mb-5">
+    <div class="bg-info row">
+        <h1 class="text-uppercase font-weight-bold text-light mx-auto p-2">Editar cadastro de Professores</h1>
+    </div>
+    <form action="/editarProfessores/<%= professor._id %>" method="POST" class="p-4" name="formProfessores"  onsubmit="return validaFormProfessores(this);">
+        <div class="row mt-3">
+            <div class="form-group col-md-6">
+                <label for="nomeProfessor" class="row font-weight-bold text-uppercase ml-1">Nome</label>
+                <input type="text" id="nomeProfessor" name="nomeProfessor" placeholder="Nome do Aluno" maxlength="150"  class="col-12 p-2 border border-dark" value="<%= professor.cadNomeProfessor %>">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="cpfProfessor" class="row font-weight-bold text-uppercase ml-1">CPF</label>
+                <input type="text" id="cpfProfessor" name="cpfProfessor" placeholder="CPF do Professor" class="col-12 p-2 border border-dark"  maxlength="14" value="<%= professor.cadCpfProfessor %>" >
+            </div>
+            <div class="form-group col-md-3">
+                <label for="rgProfessor" class="row font-weight-bold text-uppercase ml-1">RG</label>
+                <input type="text" id="rgProfessor" name="rgProfessor" placeholder="RG do Professor" class="col-12 p-2 border border-dark"  maxlength="12" value="<%= professor.cadRgProfessor %>" >
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group col-md-4">
+                <label for="paisProfessor" class="row font-weight-bold text-uppercase ml-1">País</label>
+                <input type="text" id="paisProfessor" name="paisProfessor" placeholder="País do Professor" class="col-12 p-2 border border-dark" maxlength="30" value="<%= professor.cadPaisProfessor %>">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="estadoProfessor" class="row font-weight-bold text-uppercase ml-1">Estado</label>
+                <input type="text" id="estadoProfessor" name="estadoProfessor" placeholder="Nome do Estado" class="col-12 p-2 border border-dark" maxlength="30" value="<%= professor.cadEstadoProfessor %>">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="cidadeProfessor" class="row font-weight-bold text-uppercase ml-1">Cidade</label>
+                <input type="text" id="cidadeProfessor" name="cidadeProfessor" placeholder="Nome da Cidade" class="col-12 p-2 border border-dark" maxlength="30" value="<%= professor.cadCidadeProfessor %>">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group col-md-4">
+                <label for="ruaProfessor" class="row font-weight-bold text-uppercase ml-1">Rua</label>
+                <input type="text" id="ruaProfessor" name="ruaProfessor" placeholder="Nome da Rua" class="col-12 p-2 border border-dark" maxlength="40" value="<%= professor.cadRuaProfessor %>">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="cepProfessor" class="row font-weight-bold text-uppercase ml-1">CEP</label>
+                <input type="text" id="cepProfessor" name="CEPProfessor" placeholder="Número do CEP" class="col-12 p-2 border border-dark" maxlength="9" value="<%= professor.cadCepProfessor %>">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="numeroCasaProfessor" class="row font-weight-bold text-uppercase ml-1">Número</label>
+                <input type="number" id="numeroCasaProfessor" name="numeroCasaProfessor" placeholder="Número" class="col-12 p-2 border border-dark" maxlength="8" value="<%= professor.cadNumeroCasaProfessor %>">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group col-md-4">
+                <label for="complementoCasaProfessor" class="row font-weight-bold text-uppercase ml-1">Complemento</label>
+                <input type="text" id="complementoCasaProfessor" name="complementoCasaProfessor" placeholder="Quantidade de Páginas" class="col-12 p-2 border border-dark" maxlength="30" value="<%= professor.cadComplementoCasaProfessor %>">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="telefoneProfessor" class="row font-weight-bold text-uppercase ml-1">Telefone</label>
+                <input type="tel" id="telefoneProfessor" name="telefoneProfessor" placeholder="Número do Telefone" class="col-12 p-2 border border-dark" maxlength="10" value="<%= professor.cadTelefoneProfessor %>">
+            </div>
+            <div class="form-group col-md-4">
+                <button type="submit" class="btn btn-danger mt-4 text-uppercase col-12 mx-auto" style="height: 3em;">Cadastrar</button>
+            </div>
+        </div>     
+            
+    </form>
+</div>
+
+<%- include('../partials/footer'); %>
+

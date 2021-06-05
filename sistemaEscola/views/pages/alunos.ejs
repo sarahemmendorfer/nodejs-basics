@@ -1,0 +1,59 @@
+<%- include('../partials/head'); %>
+<%- include('../partials/header'); %>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="row mt-5 mb-5">
+                <div class="col-10 text-uppercase mb-2">
+                    <h1>Alunos Listados</h1>
+                </div>
+                <div class="col-2">
+                    <a href="/cadastrarAlunos" class="btn btn-danger">Inserir</a>
+                </div>
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Matrícula</th>
+                            <th>CPF</th>
+                            <th>RG</th>
+                            <th>País</th>
+                            <th>Estado</th>
+                            <th>Cidade</th>
+                            <th>Rua</th>
+                            <th>CEP</th>
+                            <th>Número</th>
+                            <th>Complemento</th>
+                            <th>Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% alunos.forEach(function(aluno){ %>
+                        <tr>
+                            <td><%= aluno.cadNomeAluno %></td>
+                            <td><%= aluno.cadNumeroMatricula %></td>
+                            <td><%= aluno.cadCpfAluno %></td>
+                            <td><%= aluno.cadRgAluno %></td>
+                            <td><%= aluno.cadPaisAluno %></td>
+                            <td><%= aluno.cadEstadoAluno %></td>
+                            <td><%= aluno.cadCidadeAluno %></td>
+                            <td><%= aluno.cadRuaAluno %></td>
+                            <td><%= aluno.cadCepAluno %></td>
+                            <td><%= aluno.cadNumeroCasaAluno %></td>
+                            <td><%= aluno.cadComplementoCasaAluno %></td>
+                            <td><%= aluno.cadTelefoneAluno %></td>
+                            <td>
+                                <a href="/editarAlunos/<%= aluno._id %>" class="btn btn-info">Editar</a>
+                                <a href="/deletarAluno/<%= aluno._id %>" class="btn btn-primary">Deletar</a>
+                            </td>
+
+                            <% }) %>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer'); %>
