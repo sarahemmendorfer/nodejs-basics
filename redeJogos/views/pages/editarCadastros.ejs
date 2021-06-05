@@ -1,0 +1,48 @@
+
+<%- include('../partials/header') %>
+
+<section class="container">
+    <section class="bg-light mr-3 bordaArredondada m-1 mb-4">
+        <h4 class="text-center p-2 col-12 bordaSuperior corSecundaria text-light mt-3">ESCREVA UM NOVO POST!</h4>
+        <div class="row">
+            <form action="/cadastros/editarCadastros/<%= cadastro._id %>" method="POST"  name="formPost" class="row mx-4"  onsubmit="return validaFormClientes(this);" >
+                <div class="form-group col-12 mt-2">
+                    <input type="text" id="nomeCliente" name="nomeCliente" placeholder="Nome de Usuário" maxlength="100"  class="rounded col-12 p-2 border border-dark" value="<%= cadastro.nome %>">
+                </div>
+                <div class="form-group col-12 mt-2">
+                    <input type="email" id="emailCliente" name="emailCliente" placeholder="Email" maxlength="100"  class="rounded col-12 p-2 border border-dark" value="<%= cadastro.email %>">
+                </div>
+                    <div class="form-group col-12 mt-2">
+                        <input type="text" placeholder="Título..."  name="tituloPost" id="tituloPost" class="border border-dark rounded p-2 col-12 mt-2" value="<%= cadastro.titulo %>">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="password"  placeholder="Senha..."  name="senha" id="senha" class="border border-dark rounded p-2 col-12 mt-2" value="<%= cadastro.senha %>">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select name="temaPost" id="temaPost" class="form-control col-12 mt-2 mr-3"  value="<%= cadastro.tema %>">
+                            <option  value="<%= cadastro.tema %>" selected><%= cadastro.tema %></option>
+                            <option value="Among Us">Among Us</option>
+                            <option value="Dota2">Dota2</option>
+                            <option value="Fortnite">Fortnite</option>
+                            <option value="FreeFire">FreeFire</option>
+                            <option value="GTA5">GTA5</option>
+                            <option value="League of Legends">League of Legends</option>
+                            <option value="Minecraft">Minecraft</option>
+                            <option value="Pokemon GO">Pokemon GO</option>
+                            <option value="PubG">PubG</option>
+                            <option value="ResidentEvil">ResidentEvil</option>
+                            <option value="Tibia">Tibia</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+                <div class="form-group col-md-8 mt-1">
+                    <textarea name="textoPost" id="textoPost" rows="5" placeholder="Texto..." class="col-12 py-2 text-justify ml-4" value="<%= cadastro.texto %>"></textarea>
+                </div>
+                <div class="form-group ">
+                        <button class="btn corSecundaria text-light  ml-5 mt-4 d-block float-right mr-5" type="submit" name="submeter" id="submeter">Postar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</section>
+<%- include('../partials/footer'); %>

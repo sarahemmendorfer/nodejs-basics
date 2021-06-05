@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- ESTILIZAÇÃO -->
+    <link rel="stylesheet" href="/redeSocial.css">
+    <title>JogaTudo</title>
+</head>
+<body>
+
+<section class="container-fluid">
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark corPrimaria row">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerRede" aria-controls="navbarTogglerRede" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+            <a class="navbar-brand" href="/">
+                <img src="/img/logo.jpeg" alt="logo" class="m-1 mr-3">
+                JogaTudo</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerRede">        
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">INÍCIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cadastros">EDITAR CADASTRO</a>
+                </li>
+            </ul>   
+            <form class="form-inline row-12">
+                <input class="form-control mr-2 col-8" type="busca" placeholder="Tema..." id="busca">
+                <button class="btn corSecundaria text-light my-2 my-sm-0" type="submit" name="pesquisar" id="pesquisar" >Search</button>
+            </form>
+        </nav>
+    </header>

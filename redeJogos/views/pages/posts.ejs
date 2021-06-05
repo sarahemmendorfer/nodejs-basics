@@ -1,0 +1,106 @@
+
+<%- include('../partials/header') %>
+
+
+    <section class="row mt-5">
+        <section class="col-md-8">
+            <section class="bg-light mr-3 bordaArredondada m-1 mb-4">
+                <h4 class="text-center p-2 col-12 bordaSuperior corSecundaria text-light">ESCREVA UM NOVO POST!</h4>
+                <div class="row">
+                    <form action="/cadastros/cadastrarPost" method="POST"  name="formPost" class="row mx-4"  onsubmit="return validaFormClientes(this);" >
+                        <div class="form-group col-12 mt-2">
+                            <input type="text" id="nomeCliente" name="nomeCliente" placeholder="Nome de Usuário" maxlength="100"  class="rounded col-12 p-2 border border-dark">
+                        </div>
+                        <div class="form-group col-12 mt-2">
+                            <input type="email" id="emailCliente" name="emailCliente" placeholder="Email" maxlength="100"  class="rounded col-12 p-2 border border-dark">
+                        </div>
+                            <div class="form-group col-12 mt-2">
+                                <input type="text" placeholder="Título..."  name="tituloPost" id="tituloPost" class="border border-dark rounded p-2 col-12 mt-2">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="password"  placeholder="Senha..."  name="senha" id="senha" class="border border-dark rounded p-2 col-12 mt-2">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <select name="temaPost" id="temaPost" class="form-control col-12 mt-2 mr-3">
+                                    <option value="Among Us" selected>Among Us</option>
+                                    <option value="Dota2">Dota2</option>
+                                    <option value="Fortnite">Fortnite</option>
+                                    <option value="FreeFire">FreeFire</option>
+                                    <option value="GTA5">GTA5</option>
+                                    <option value="League of Legends">League of Legends</option>
+                                    <option value="Minecraft">Minecraft</option>
+                                    <option value="Pokemon GO">Pokemon GO</option>
+                                    <option value="PubG">PubG</option>
+                                    <option value="ResidentEvil">ResidentEvil</option>
+                                    <option value="Tibia">Tibia</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>                          
+                        <div class="form-group col-md-8 mt-1">
+                            <textarea name="textoPost" id="textoPost" rows="5" placeholder="Texto..." class="col-12 py-2 text-justify ml-4"></textarea>
+                        </div>
+                        <div class="form-group ">
+                                <button class="btn corSecundaria text-light  ml-5 mt-4 d-block float-right mr-5" type="submit" name="submeter" id="submeter">Postar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+            <% cadastros.forEach(function(cadastro){ %>
+            <section class="row bg-light mr-3 bordaArredondada pt-2 mb-4 m-1">
+                
+                <div class="row col-7">
+                    <div class="col-9 ">
+                        <p class="font-weight-bold mt-3"><%= cadastro.nome %></p>
+                    </div>
+                </div>
+                <div class="col-5 mt-2">
+                    <p class="border border-dark mt-2 rounded"><span class="ml-2"><%= cadastro.titulo %></span></p>
+                </div>
+                <div class="border border-dark mt-2 rounded col-11 m-4 overflow-auto " id="caixaTexto">
+                    <p class="mx-3 my-2 text-justify"><%= cadastro.texto %></p>
+                </div>
+                <div class="border border-dark mt-2 rounded col-4 m-4 overflow-auto " id="meuTema">
+                    <p class="mx-3 my-2 text-justify">TEMA: <%= cadastro.tema %></p>
+                </div>
+               
+            </section> 
+            <% }) %>
+        </section>
+        
+        <section class="col-md-4 " >
+            <section class="row m-1 bg-light bordaArredondada" >
+                <h4 class="text-center corSecundaria text-light p-2 col-12 bordaSuperior" >ÚLTIMOS POSTS</h4>
+                <% if(cadastros.length > 0) { %>
+                    <div class="col-12">
+                        <p class="text-uppercase font-weight-bold mt-3 ml-3"><%= cadastros[0].nome %></p>
+                        <p class="ml-3 text-justify"><%= cadastros[0].textoCurto %></p>
+                <% } %> 
+                <% if(cadastros.length > 1) { %>
+                    </div>
+                    <div class="col-12">
+                        <p class="text-uppercase font-weight-bold mt-3 ml-3"><%= cadastros[1].nome %></p>
+                        <p class="text-justify ml-3"><%= cadastros[1].textoCurto %></p>
+                    </div>
+                <% } %> 
+                <% if(cadastros.length > 2) { %>
+                    <div class="col-12">
+                        <p class="text-uppercase font-weight-bold mt-3 ml-3"><%= cadastros[2].nome %></p>
+                        <p class="ml-3 text-justify"><%= cadastros[2].textoCurto %></p>
+                <% } %> 
+                <% if(cadastros.length > 3) { %>
+                    </div>
+                    <div class="col-12">
+                        <p class="text-uppercase font-weight-bold mt-3 ml-3"><%= cadastros[3].nome %></p>
+                        <p class="ml-3  text-justify"><%= cadastros[3].textoCurto %></p>
+                    </div>
+                <% } %> 
+            </section>
+            
+            <section>
+                
+            </section>
+        </section>
+    </section>
+<%- include('../partials/footer') %>

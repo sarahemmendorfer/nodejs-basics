@@ -1,0 +1,48 @@
+<%- include('../partials/header'); %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="row mt-5 bg-light mr-3 bordaArredondada m-1 mb-4" >
+
+                <h1 class="col-12 text-uppercase text-center py-2 bordaSuperior corSecundaria text-light">Clientes Listados</h1>
+
+                <div>
+                    <table class="table table-sm table-hover ml-5">
+                        <thead>
+                            <% cadastros.forEach(function(cadastro){ %>
+                            <% if(cadastros.length > 0 ) { %>  
+
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Título Post</th>
+                                <th>Senha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                             
+                            <tr>
+                                <td><%= cadastro.nome %></td>
+                                <td><%= cadastro.email %></td>
+                                <td><%= cadastro.titulo %></td>
+                                <td><input type="password" value="<%= cadastro.senha %>"></td>
+                                <td>
+                                    <a href="/cadastros/editarCadastros/<%= cadastro._id %>" class="btn corPrimaria text-light">Editar</a>
+                                    <a href="/cadastros/deletarUsuarios/<%= cadastro._id %>" class="btn corSecundaria text-light">Deletar</a>
+                                </td>
+                                <% }}) %>
+                                
+                                <% if(cadastros.length == 0 ) { %>  
+                                <div class="ml-5">NÃO HÁ CLIENTES CADASTRADOS</div>
+                                <% } %>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer'); %>
