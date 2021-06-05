@@ -1,0 +1,44 @@
+<%- include('../partials/head'); %>
+<%- include('../partials/header'); %>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="row mt-5 mb-5">
+                <div class="col-10 text-uppercase mb-2">
+                    <h1>Clientes Listados</h1>
+                </div>
+                <div class="col-2">
+                    <a href="/clientes/cadastrarClientes" class="btn btn-success">Inserir</a>
+                </div>
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Agência</th>
+                            <th>Operação</th>
+                            <th>Conta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% clientes.forEach(function(cliente){ %>
+                        <tr>
+                            <td><%= cliente.nome %></td>
+                            <td><%= cliente.agencia %></td>
+                            <td><%= cliente.operacao %></td>
+                            <td><%= cliente.conta %></td>
+  
+                            <td>
+                                <a href="/clientes/editarClientes/<%= cliente._id %>" class="btn btn-secondary">Editar</a>
+                                <a href="/clientes/deletarClientes/<%= cliente._id %>" class="btn btn-dark" onclick="return confirm('tem certeza que deseja apagar?');">Deletar</a>
+                            </td>
+
+                            <% }) %>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer'); %>
